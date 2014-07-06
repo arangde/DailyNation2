@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.dailynation.nationmediapad" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>DailyNation</name>
+	<description>
+		Daily Nation Mobile News
+	</description>
+	<author email="pm@marcellus.tv" href="http://mobile.nation.ke">
+		pm@marcellus.tv
+	</author>
+	<feature name="http://api.phonegap.com/1.0/device" />
+	<access origin="*" />
+	
+	<preference name="fullscreen" value="false" />
+	<preference name="webviewbounce" value="false" />
+    
+    <access origin="http://127.0.0.1*" />
+    <access origin="http://dfihluw6z4ymo.cloudfront.net" subdomains="true" />
+    <access origin="http://cdn.marcellus.tv" subdomains="true" />
+    
+    <access origin="http://www.facebook.com" subdomains="true" />
+    <access origin="http://www.twitter.com" subdomains="true" />
+    <access origin="http://plus.google.com" subdomains="true" />
+    <access origin="http://www.linkedin.com" subdomains="true" />
+    <access origin="http://m.youtube.com" subdomains="true" />
+    <access origin="https://s3.amazonaws.com/" subdomains="true" />
+
+    <access origin="www.nation.co.ke/image/view/-/" subdomains="true" />
+    <access origin="http://ytimg.com/iv/" subdomains="true" />
+    <preference name="OpenAllWhitelistURLsInWebView" value="yes" />
+
+	<!-- for iOS Social Sharing-->
+	<feature name="SocialSharing">
+  		<param name="ios-package" value="SocialSharing" />
+	</feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
+    <plugin name="InAppBrowser" value="CDVInAppBrowser" />
+
+</widget>
