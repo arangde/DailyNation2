@@ -633,4 +633,48 @@ var DataCenter = null;
 		}
 		return list;
 	}
+
+	var trending_name = "fa-trending";
+
+	function loadTrendingArticles() {
+		var trending_url = 'http://dfihluw6z4ymo.cloudfront.net/0/xml/trending.xml';
+
+		Util.ajax({
+			url: trending_url,
+			//responseType: "xml",
+			success: function(str) {
+				console.log("Loaded Trending XML");
+				str = str.replace(/& /g, "&amp; ");
+				var xml = Util.parseXML(str);
+				var data = parseData(xml);
+				saveCacheArticles(trending_name, data);
+				if (success != null) {
+					success(data);
+				}
+			},
+			fail: function(req) {
+				console.log("Load Trending XML failed - status: " + req.status + "(" + req.statusText + ") response:" + req.responseText);
+				if (fail != null) {
+					fail("Loading Trending XML failed");
+				}
+			}
+		});
+	}
+
+	function getTrendingArticles() {
+		var map = {};
+		var list = [];
+		var data = loadCacheArticles(trending_name);
+		if (data != null) {
+			var items = data.items;
+			for (var j = 0; j < items.length; j++) {
+				var item = items[j];
+				if (true) {
+					list.push(item);
+				}
+			}
+		}
+		return list;
+	}
+
 })();

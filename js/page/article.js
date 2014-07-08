@@ -26,6 +26,8 @@ var DISQUS_TIMER = null;
 		onPageShow: function() {
 			this.onResize();
 			setTextSizeFromSetting();
+			//applyTrendingArticles();
+
 		},
 		// resize all elements according to the screen
 		onResize: function() {
@@ -96,21 +98,37 @@ var DISQUS_TIMER = null;
 			if (currentItem == null) {
 				return;
 			} {
-				var url = 'http://www.facebook.com/sharer.php?u=' + currentItem.link;
-				$("#popup-share li a#facebook")[0].href = url;
-				$("#popup-share li a#facebook")[0].target = "_blank";
+				
+				//$("#popup-share li a#facebook")[0].href = url;
+				//$("#popup-share li a#facebook")[0].target = "_blank";
+                $("#popup-share li a#facebook").bind("click", function() {
+                	var url = 'http://www.facebook.com/sharer.php?u=' + currentItem.link;
+                    window.open( url, '_blank');
+                });
 			} {
-				var url = 'http://www.twitter.com/intent/tweet?text=' + currentItem.link;
-				$("#popup-share li a#twitter")[0].href = url;
-				$("#popup-share li a#twitter")[0].target = "_blank";
+				
+				//$("#popup-share li a#twitter")[0].href = url;
+				//$("#popup-share li a#twitter")[0].target = "_blank";
+                $("#popup-share li a#twitter").bind("click", function() {
+                    var url = 'http://www.twitter.com/intent/tweet?text=' + currentItem.link;
+                    window.open( url, '_blank');
+                });
 			} {
-				var url = 'https://plus.google.com/share?url=' + currentItem.link;
-				$("#popup-share li a#google")[0].href = url;
-				$("#popup-share li a#google")[0].target = "_blank";
+				
+				//$("#popup-share li a#google")[0].href = url;
+				//$("#popup-share li a#google")[0].target = "_blank";
+				$("#popup-share li a#google").bind("click", function() {
+                    var url = 'https://plus.google.com/share?url=' + currentItem.link;
+                    window.open( url, '_blank');
+                });
 			} {
-				var url = 'http://www.linkedin.com/shareArticle?mini=true&url=' + currentItem.link;
-				$("#popup-share li a#linkedin")[0].href = url;
-				$("#popup-share li a#linkedin")[0].target = "_blank";
+				
+				//$("#popup-share li a#linkedin")[0].href = url;
+				//$("#popup-share li a#linkedin")[0].target = "_blank";
+				$("#popup-share li a#linkedin").bind("click", function() {
+                    var url = 'http://www.linkedin.com/shareArticle?mini=true&url=' + currentItem.link;
+                    window.open( url, '_blank');
+                });
 			}
 		}
 	});
@@ -300,5 +318,19 @@ var DISQUS_TIMER = null;
 		ja.removeClass("big");
 		ja.removeClass("huge");
 		ja.addClass(size);
+	}
+	function applyTrendingArticles() {
+		var articles = getTrendingArticles();
+		var trending = "";
+		for(var i=0; i<articles.length; i++) {
+			var item = articles[i];
+			trending += "<div class='trending-article' id='trending_article_" + i + "'>"
+				+ "<div class='photo'><img src='" + item.photo + "' /></div>"
+				+ "<div class='category'>" + item.category + "</div>"
+				+ "<div class='title'>" + item.title + "</div>"
+				+ "</div>";
+		}
+
+		$(".trending-articles").html(trending);
 	}
 })();

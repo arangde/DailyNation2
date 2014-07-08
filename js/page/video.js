@@ -46,7 +46,15 @@
 		// Update Button on Sections Popup
 		"$tap:#popup-videosections .update": function() {
 			updateArticles(true);
-		}
+		},
+
+		// go to home page
+		"$tap:$ .button.back": function() {
+			//$.mobile.changePage("#page-home", {transition: "slideup", reverse: true});
+            
+            parent.history.back();
+		},
+
 	});
 
 	var videos = null;

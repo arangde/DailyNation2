@@ -230,6 +230,10 @@ h3.title, h4.title {
 	color: #000000;
 }
 
+.clearfix {
+	clear: both;
+}
+
 /*iOS7 fix*/
 /*.ui-mobile .ui-page {
 	margin-top:20px;  
@@ -238,7 +242,30 @@ h3.title, h4.title {
 /* Page - Home */
 #page-home {
 }
-	 .ui-header {
+.last-update {
+ 	height: 30px;
+ 	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	font-weight:bold;
+	text-transform:uppercase;
+ }
+ .last-update .time {
+	float: left;
+	padding: 8px 0 0 10px;
+ }
+ .last-update .time .title {
+	font-size: 12px;
+	padding-right: 2px;
+ }
+ .last-update .time .value {
+	color: #C52854;
+ }
+ .last-update .date {
+	color: #C52854;
+	float: right;
+	padding: 8px 10px 0 0;
+ }
+ .ui-header {
 	color: rgb(0, 0, 0);
 	height: 40px;
 	border: none;
@@ -249,28 +276,7 @@ h3.title, h4.title {
 	font-size: italic;
 	background-color: #333;
 	background-image: none;
-	}
-		 .ui-header .time {
-			position: absolute;
-			font-family:Arial, Helvetica, sans-serif;
-				font-size:10px;
-				font-weight:bold;
-				text-transform:uppercase;
-			right: 15px;
-			top: 23px;
-		}
-		 .ui-header .date {
-			 font-family:Arial, Helvetica, sans-serif;
-				font-size:10px;
-				font-weight:bold;
-				text-transform:uppercase;
-			position: absolute;
-			left: 15px;
-			top: 23px;
-		}
-		 .ui-header .border {
-			border-bottom: 1px solid rgb(0, 0, 0);
-		}
+}
 		 .ui-header .logo {
 			background-image: url(../img/logo.png);
 			background-repeat: no-repeat;
@@ -1259,6 +1265,11 @@ Media Queries
 					width: 34rem;
 					height: 50em;
 				}
+            
+	#page-home.has-rightsidebar .articles .pager .fotorama__nav {
+		padding-left: 12%;
+		padding-top: 10px;
+	}
 
 /*---------------------------- forex widget css ---------------------------------- */
    #b_forex{

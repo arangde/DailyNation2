@@ -5,7 +5,7 @@
 (function() {'use strict';
 
 	var page = app.registerPage('page-photo', {
-
+		
 		// resize all elements according to the screen
 		onResize: function() {
 			var heightWindow = $(window).height();
@@ -15,6 +15,10 @@
 
 			var w = find(".gallery-item").width();
 			find(".gallery-item").height(w*0.66);
+
+			if (scrollBody != null) {
+				scrollBody.refresh();
+			}
 		},
 
 		// called when the page becomes visible
@@ -31,6 +35,12 @@
 			html += "</div>";
 
 			find(".photo-gallery").html(html);
+
+			scrollBody = new iScroll(find(".contents")[0], {
+				useTransition: true,
+				vScrollbar: true,
+				hScrollbar: false
+			});
 
 			this.onResize();
 		},
@@ -52,6 +62,7 @@
 		return page.find(s);
 	}
 
+	var scrollBody = null;
 	var photos = null;
 
 })();

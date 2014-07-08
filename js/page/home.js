@@ -12,6 +12,7 @@
 			updateDateTimeOnHeader(null);
 			setTimeout(function() {
 				updateArticles();
+				//loadTrendingArticles();
 			}, 100);
 		},
 
@@ -140,14 +141,18 @@
 
 	function updateDateTimeOnHeader(date) {
 		if (date == null) {
-			find(".ui-header .time .value").html("");
-			find(".ui-header .date").html("");
+			find(".last-update .time .value").html("");
+			find(".last-update .date").html("");
 			return;
 		}
-		var strTime = date.toTimeString();
-		find(".ui-header .time .value").html(strTime);
-		var strDate = date.toDateString();
-		find(".ui-header .date").html(strDate);
+		var strTime = $.format.date(date.getTime(), "h:m a");
+		var offset = date.getTimezoneOffset();
+		offset = offset / 60 * (-1);
+		offset = (offset<0)? offset: "+" + offset;
+		strTime = strTime + " (UTC" + offset + ")";
+		find(".last-update .time .value").html(strTime);
+		var strDate = $.format.date(date.getTime(), "ddd, MMMM d, yyyy");
+		find(".last-update .date").html(strDate);
 	}
 
 	function updateArticles(flagUpdate) {
