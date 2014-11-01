@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.dailynation.nationmedia" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="AllowInlineMediaPlayback" value="false" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <preference name="BackupWebStorage" value="cloud" />
+    <preference name="DisallowOverscroll" value="false" />
+    <preference name="EnableViewportScale" value="false" />
+    <preference name="FadeSplashScreen" value="true" />
+    <preference name="FadeSplashScreenDuration" value=".25" />
+    <preference name="KeyboardDisplayRequiresUserAction" value="true" />
+    <preference name="MediaPlaybackRequiresUserAction" value="false" />
+    <preference name="ShowSplashScreenSpinner" value="true" />
+    <preference name="SuppressesIncrementalRendering" value="false" />
+    <preference name="TopActivityIndicator" value="gray" />
+    <preference name="GapBetweenPages" value="0" />
+    <preference name="PageLength" value="0" />
+    <preference name="PaginationBreakingMode" value="page" />
+    <preference name="PaginationMode" value="unpaginated" />
+    <feature name="LocalStorage">
+        <param name="ios-package" value="CDVLocalStorage" />
+    </feature>
+    <name>DailyNation</name>
+    <description>
+		Daily Nation Mobile News
+	</description>
+    <author email="pm@marcellus.tv" href="http://mobile.nation.ke">
+		pm@marcellus.tv
+	</author>
+    <feature name="http://api.phonegap.com/1.0/device" />
+    <access origin="*" />
+    <preference name="fullscreen" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <access origin="http://127.0.0.1*" />
+    <access origin="http://dfihluw6z4ymo.cloudfront.net" subdomains="true" />
+    <access origin="http://cdn.marcellus.tv" subdomains="true" />
+    <access origin="http://www.facebook.com" subdomains="true" />
+    <access origin="http://www.twitter.com" subdomains="true" />
+    <access origin="http://plus.google.com" subdomains="true" />
+    <access origin="http://www.linkedin.com" subdomains="true" />
+    <access origin="http://m.youtube.com" subdomains="true" />
+    <access origin="https://s3.amazonaws.com/" subdomains="true" />
+    <access origin="https://youtube.com" subdomains="true" />
+    <access origin="www.nation.co.ke/image/view/-/" subdomains="true" />
+    <access origin="http://ytimg.com/iv/" subdomains="true" />
+    <preference name="OpenAllWhitelistURLsInWebView" value="yes" />
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="ios-package" value="CDVInAppBrowser" />
+    </feature>
+    <feature name="Console">
+        <param name="ios-package" value="CDVLogger" />
+    </feature>
+    <feature name="AdMob">
+        <param name="ios-package" value="CDVAdMob" />
+    </feature>
+    <feature name="Device">
+        <param name="ios-package" value="CDVDevice" />
+    </feature>
+    <feature name="PushPlugin">
+        <param name="ios-package" value="PushPlugin" />
+    </feature>
+    <feature name="UniversalAnalytics">
+        <param name="ios-package" value="UniversalAnalyticsPlugin" />
+    </feature>
+</widget>
